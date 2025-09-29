@@ -69,7 +69,7 @@ function Projects() {
                             <h4 style={{ fontFamily: 'sans', fontWeight: 'bold', color: "#333", fontSize: "30px" }}>
                               {data.name}
                             </h4>
-                            <p style={{ color: "#737373", fontSize: '15px', lineBreak: '10px', font: 'sans', paddingTop: '10px', fontFamily: 'sans' }}>
+                            <p style={{ color: "#737373", fontSize: '17px', lineBreak: '10px', font: 'sans', paddingTop: '10px', fontFamily: 'sans' }}>
                               {data.description}
                             </p>
 
