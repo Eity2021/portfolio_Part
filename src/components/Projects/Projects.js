@@ -1,23 +1,18 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { PuffLoader } from "react-spinners";
-import Modal from "./Modal";
 import axios from 'axios';
 import { meta } from "../../content_option";
+import { MonitorCog } from 'lucide-react';
 function Projects() {
   const [portfolio, setPortfolio] = useState([]);
+  console.log("portfolio", portfolio);
   const [loading, setLoading] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-  const [perProduct, setPerProduct] = useState([]);
 
 
-  const openModal = (product) => {
-    setIsOpen(true);
-    // setProductId(id)
-    setPerProduct(product);
-  };
-  const closeModal = () => setIsOpen(false);
+
+
 
   useEffect(() => {
     axios
@@ -63,20 +58,41 @@ function Projects() {
                   </Col>
                 </Row>
                 <div className="pb-5 po_items_ho">
-                  {portfolio.map((data, i) => {
+                  {portfolio.map((data, index) => {
                     return (
-                      <div key={i} className="po_item">
+                      <div key={index} className="po_item">
                         <div>
                           <div>
                             <img src={data.image} alt={data.name} className="po_image" />
                           </div>
                           <div style={{ textAlign: "left", paddingLeft: "20px", paddingRight: "20px", paddingTop: '50px' }}>
-                            <h4 style={{}}>
+                            <h4 style={{ fontFamily: 'sans', fontWeight: 'bold', color: "#333", fontSize: "30px" }}>
                               {data.name}
                             </h4>
-                            <p>
+                            <p style={{ color: "#737373", fontSize: '15px', lineBreak: '10px', font: 'sans', paddingTop: '10px', fontFamily: 'sans' }}>
                               {data.description}
                             </p>
+
+                            <div style={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(5, 1fr)',
+                              gap: '10px',
+                              paddingTop: "10px",
+                              paddingBottom: "20px"
+                            }}>
+                              {
+                                data?.languageInfo.map((tech, index) => (
+                                  <div key={index} >
+                                    <p style={{ marginBottom: '0px', backgroundColor: '#f1f1f1', display: 'flex', justifyContent: 'center', fontSize: "12px", paddingTop: '3px', paddingLeft: '3px', borderRadius: "10px", fontFamily: 'sans' }}>{tech}</p>
+                                  </div>
+                                ))
+                              }
+                            </div>
+
+                            <div style={{ display: 'flex', gap: '6px' }}>
+                              <MonitorCog color="#737373" size={20} />
+                              <a href={data?.liveLink} target="_blank" style={{ textDecoration: 'none', color: '#737373', fontSize: '14px', fontWeight: 'bold', fontFamily: 'sans' }} >Live Demo</a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -87,11 +103,6 @@ function Projects() {
             </HelmetProvider>
 
 
-            <Modal
-              isOpen={isOpen}
-              closeModal={closeModal}
-              perProduct={perProduct}
-            ></Modal>
           </div>
         )}
       </div>
