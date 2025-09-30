@@ -11,9 +11,6 @@ function Projects() {
   const [loading, setLoading] = useState(true);
 
 
-
-
-
   useEffect(() => {
     axios
       .get("https://portfolio-backend-part.vercel.app/projects")
@@ -27,7 +24,7 @@ function Projects() {
       });
   }, []);
   return (
-    <div style={{ background: "#0c0c0c" }}>
+    <div >
       <div>
         {loading === true ? (
           <div
@@ -42,7 +39,6 @@ function Projects() {
           </div>
         ) : (
           <div>
-
             <HelmetProvider>
               <Container className="About-header">
                 <Helmet>
@@ -52,8 +48,8 @@ function Projects() {
                 </Helmet>
                 <Row className="pt-md-3">
                   <Col lg="12">
-                    <h1 className="display-4" style={{ textAlign: "left", color: "#fff", marginTop: '100px' }}> Portfolio </h1>
-                    <p className=" mb-4" style={{ textAlign: "left", color: "#fff", marginTop: '4px' }}> A collection of my recent work and side projects </p>
+                    <h1 className="display-4" style={{ textAlign: "left", color: "#333", marginTop: '100px', fontFamily: 'poppins', fontWeight: 'bold' }}> Portfolio </h1>
+                    <p className=" mb-4" style={{ textAlign: "left", color: "#333", marginTop: '4px', fontFamily: 'poppins' }}> A collection of my recent work and side projects </p>
                     <hr className="t_border  ml-0 text-left" style={{ marginTop: "30px", marginBottom: "50px" }} />
                   </Col>
                 </Row>
@@ -66,13 +62,12 @@ function Projects() {
                             <img src={data.image} alt={data.name} className="po_image" />
                           </div>
                           <div style={{ textAlign: "left", paddingLeft: "20px", paddingRight: "20px", paddingTop: '50px' }}>
-                            <h4 style={{ fontFamily: 'sans', fontWeight: 'bold', color: "#333", fontSize: "30px" }}>
+                            <h4 style={{ fontFamily: "roboto", fontWeight: 'medium', color: "#333", fontSize: "30px" }}>
                               {data.name}
                             </h4>
-                            <p style={{ color: "#737373", fontSize: '17px', lineBreak: '10px', font: 'sans', paddingTop: '10px', fontFamily: 'sans' }}>
+                            <p style={{ color: "#737373", fontSize: '18px', lineBreak: '10px', paddingTop: '10px', fontFamily: "roboto", fontFamily: 'medium' }}>
                               {data.description}
                             </p>
-
                             <div style={{
                               display: 'grid',
                               gridTemplateColumns: 'repeat(5, 1fr)',
@@ -83,15 +78,14 @@ function Projects() {
                               {
                                 data?.languageInfo.map((tech, index) => (
                                   <div key={index} >
-                                    <p style={{ marginBottom: '0px', backgroundColor: '#f1f1f1', display: 'flex', justifyContent: 'center', fontSize: "12px", paddingTop: '3px', paddingLeft: '3px', borderRadius: "10px", fontFamily: 'sans' }}>{tech}</p>
+                                    <p style={{ marginBottom: '0px', backgroundColor: '#f1f1f1', display: 'flex', justifyContent: 'center', fontSize: "12px", paddingTop: '6px', paddingBottom: '6px', paddingLeft: '3px', borderRadius: "10px", fontFamily: "roboto", }}>{tech}</p>
                                   </div>
                                 ))
                               }
                             </div>
-
-                            <div style={{ display: 'flex', gap: '6px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'end', gap: '6px' }}>
                               <MonitorCog color="#737373" size={20} />
-                              <a href={data?.liveLink} target="_blank" style={{ textDecoration: 'none', color: '#737373', fontSize: '14px', fontWeight: 'bold', fontFamily: 'sans' }} >Live Demo</a>
+                              <a href={data?.liveLink} target="_blank" style={{ textDecoration: 'none', color: '#737373', fontSize: '14px', fontWeight: 'bold', fontFamily: "roboto" }} >Live Demo</a>
                             </div>
                           </div>
                         </div>

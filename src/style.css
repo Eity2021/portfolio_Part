@@ -794,6 +794,7 @@ button:focus {
   padding-bottom: 40px;
   border: 1px solid #f1f1f1;
   transition: 0.3s ease;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
 }
 
 .po_item .po_image {
