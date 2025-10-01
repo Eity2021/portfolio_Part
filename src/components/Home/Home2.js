@@ -14,7 +14,7 @@ function Home2() {
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
-        
+
 
 
           <Col md={8} className="home-about-description">
@@ -33,17 +33,17 @@ function Home2() {
               expertise in:🤷‍♂️
               <br />
               <br />
-         
+
               💾 MongoDB:
               <i>
                 <b className="purple">
-            
+
                   Creating and managing databases, designing efficient data
                   schemas.
                 </b>
               </i>
               <br />
-          
+
               🚀 Express.js
               <i>
                 <b className="purple">
@@ -52,7 +52,7 @@ function Home2() {
                 </b>
               </i>
               <br />
-            
+
               ⚛️ React:{" "}
               <i>
                 <b className="purple">
@@ -75,23 +75,23 @@ function Home2() {
                   queries, and ensuring data integrity.
                 </b>{" "}
               </i>
-             <div className="margin-top">
-               <p>
-                I'm well-versed in the latest web development technologies and
-                methodologies and am always eager to learn and adapt to emerging
-                trends.
-              </p>
-              <p>
-                🌐 You can check out some of my projects on my portfolio page
-                where I demonstrate my ability to transform ideas into
-                functional, user-friendly web applications.
-              </p>
-              <p>
-                🙌 Thank you for visiting my website! Whether you want to
-                collaborate on a project, seek advice, or want to connect, I'm
-                excited to hear from you. Let's create amazing web experiences
-                together!
-              </p></div>
+              <div className="margin-top">
+                <p>
+                  I'm well-versed in the latest web development technologies and
+                  methodologies and am always eager to learn and adapt to emerging
+                  trends.
+                </p>
+                <p>
+                  🌐 You can check out some of my projects on my portfolio page
+                  where I demonstrate my ability to transform ideas into
+                  functional, user-friendly web applications.
+                </p>
+                <p>
+                  🙌 Thank you for visiting my website! Whether you want to
+                  collaborate on a project, seek advice, or want to connect, I'm
+                  excited to hear from you. Let's create amazing web experiences
+                  together!
+                </p></div>
             </p>
           </Col>
           <Col md={4} className="myAvatar ">
